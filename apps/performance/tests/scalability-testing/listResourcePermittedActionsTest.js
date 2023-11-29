@@ -6,7 +6,7 @@ const {
   getAuthAndTenantID,
   getCurrentDate,
   elasticSearchHost,
- } = require("../load_testing/src/untils.js");
+ } = require("../../../../libs/src/utils.js");
  
  export function setup() {
   const authAndTenantID = getAuthAndTenantID();
@@ -33,7 +33,7 @@ export const options = {
       executor: "constant-arrival-rate",
       rate: 50000,
       timeUnit: '167s',
-      preAllocatedVUs: 20000,
+      preAllocatedVUs: 1000,
       duration: '120s'
     },
   }
@@ -55,7 +55,7 @@ export default function (authAndTenantID) {
     'Authorization': `Bearer ${accessToken}`,
     'Content-Type': 'application/json',
   };
-  const res = http.post("https://dev-api.mammothcyber.io/graphql", JSON.stringify({query: query}), 
+  const res = http.post("https://qa-api.mammothcyber.io/graphql", JSON.stringify({query: query}), 
     {headers: headers,}
   );
   // check that response is 200
@@ -64,7 +64,7 @@ export default function (authAndTenantID) {
   });
   // Print out the response body when the status is not 200
   if(res.status != 200) {
-    console.log(res.status + " " + res.status_text + " Body: " + res.body);
+    console.log(res.status_text + " " + res.body);
   }
   //timer between each test run for a vu
   sleep(1);
@@ -78,12 +78,12 @@ export function handleSummary(data) {
       "Content-Type": "application/json",
     },
   };
-   const resp = http.post('http://es.mammothcyber.io/load_testing_getuserentryr-' + getCurrentDate() + '/_doc/', JSON.stringify(data), params);
-   console.log(resp.status_text + " Body: " + resp.body);
+  //  const resp = http.post('http://es.mammothcyber.io/load_testing_getuserentryr-' + getCurrentDate() + '/_doc/', JSON.stringify(data), params);
+  //  console.log(resp.status_text + " " + resp.body);
 
   // Generate a test report in JSON file format 
   return {
     stdout : textSummary(data, {indent: '→', enableColors: true}),
-    '../test_results/appLauncherSummary.json' : JSON.stringify(data),
+    // '../test_results/appLauncherSummary.json' : JSON.stringify(data),
   };
 };

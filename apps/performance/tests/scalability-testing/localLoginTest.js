@@ -5,7 +5,7 @@ import { textSummary } from 'https://jslib.k6.io/k6-summary/0.0.2/index.js';
 //  getAuthAndTenantID,
 //  getCurrentDate,
 //  elasticSearchHost,
-// } = require("../load_testing/src/untils.js");
+// } = require("../../../../libs/src/utils");
 
 // export function setup() {
 //  const authAndTenantID = getAuthAndTenantID();
