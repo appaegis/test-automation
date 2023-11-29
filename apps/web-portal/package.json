@@ -1,0 +1,33 @@
+{
+  "name": "web-portal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node install-platform-packages.js",
+    "test": "playwright test",
+    "lint": "eslint **/*.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.35.1",
+    "eslint": "^8.21.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-playwright": "^0.10.0",
+    "eslint-plugin-spellcheck": "^0.0.19",
+    "playwright": "^1.35.1"
+  },
+  "dependencies": {
+    "@aws-sdk/client-ec2": "^3.399.0",
+    "appium": "^2.0.0-beta.57",
+    "applescript": "^1.0.0",
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "graphql": "^16.5.0",
+    "graphql-request": "^4.3.0",
+    "sshpk": "^1.17.0",
+    "webdriverio": "^8.6.8"
+  }
+}

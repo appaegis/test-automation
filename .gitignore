@@ -128,3 +128,13 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+k6
+.nx/installation
+.nx/cache
+.DS_Store
+
+**/test-results/
+**/playwright-report
+**/blob-report/
+**/playwright/.cache/
