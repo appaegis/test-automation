@@ -1,7 +1,7 @@
 const { test } = require("@playwright/test");
 const { HTTPS } = require("./https");
 const { gql } = require("graphql-request");
-const { networkSchema } = require("../../../../core_lib/src/schema");
+const { networkSchema } = require("../../../libs/src/schema");
 
 exports.ServiceEdgeAPI = class ServiceEdge extends HTTPS {
   async addServiceEdgeProfile(seName) {

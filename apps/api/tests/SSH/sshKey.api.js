@@ -1,5 +1,5 @@
 const { test, expect } = require("../../src/fixtures/apiSetup");
-const { SSHKeyAPI } = require("../../src/library/apiRequest/sshKey");
+const { SSHKeyAPI } = require("../../src/sshKey");
 test.describe.configure({ mode: "serial" });
 
 const SSH_KEY_NAME = "Automation_SSH_KEY";

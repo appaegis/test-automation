@@ -1,5 +1,5 @@
 const { test, expect } = require("../../src/fixtures/apiSetup");
-const { SSHRuleAPI } = require("../../src/library/apiRequest/sshRule");
+const { SSHRuleAPI } = require("../../src/sshRule");
 test.describe.configure({ mode: "serial" });
 
 let sshRuleAPI = new SSHRuleAPI();

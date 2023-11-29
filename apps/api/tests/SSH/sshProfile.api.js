@@ -1,6 +1,6 @@
 const { test, expect } = require("../../src/fixtures/apiSetup");
-const { SSHProfileAPI } = require("../../src/library/apiRequest/sshProfile");
-const { SSHRuleAPI } = require("../../src/library/apiRequest/sshRule");
+const { SSHProfileAPI } = require("../../src/sshProfile");
+const { SSHRuleAPI } = require("../../src/sshRule");
 test.describe.configure({ mode: "serial" });
 
 const SSH_PROFILE_RULE_NAME = "Automation_Profile_RULE_3769";

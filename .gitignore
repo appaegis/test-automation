@@ -133,3 +133,8 @@ k6
 .nx/installation
 .nx/cache
 .DS_Store
+
+**/test-results/
+**/playwright-report
+**/blob-report/
+**/playwright/.cache/

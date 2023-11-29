@@ -1,5 +1,5 @@
 const { test, expect } = require("@playwright/test");
-const { ExtensionAPI } = require("../../src/library/apiRequest/extension");
+const { ExtensionAPI } = require("../../src/extension");
 const extensionAPI = new ExtensionAPI();
 test.beforeAll(async () => {
   await extensionAPI.init(process.env.GRAPHQL_API);

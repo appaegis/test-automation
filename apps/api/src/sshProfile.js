@@ -3,7 +3,7 @@ const { gql } = require("graphql-request");
 const {
   sshProfileSchema,
   sshProfileRuleSchema,
-} = require("../../../../core_lib/src/schema");
+} = require("../../../libs/src/schema");
 const { SSHRuleAPI } = require("./sshRule");
 
 exports.SSHProfileAPI = class sshProfile extends HTTPS {

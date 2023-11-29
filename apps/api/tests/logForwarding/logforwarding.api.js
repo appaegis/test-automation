@@ -1,5 +1,5 @@
 const { test, expect } = require("@playwright/test");
-const { LogForwardingAPI } = require("../../src/library/apiRequest/logForwarding");
+const { LogForwardingAPI } = require("../../src/logForwarding");
 test.describe.configure({ mode: "serial" });
 
 let logForwarding = new LogForwardingAPI();

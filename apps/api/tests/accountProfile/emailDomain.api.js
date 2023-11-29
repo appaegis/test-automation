@@ -1,6 +1,6 @@
-const { test, expect } = require("../../../src/fixtures/apiSetup");
-const { EmailDomainAPI } = require("../../../src/library/apiRequest/accountProfile");
-const { UserAPI } = require("../../../src/library/apiRequest/user");
+const { test, expect } = require("../../src/fixtures/apiSetup");
+const { EmailDomainAPI } = require("../../src/accountProfile");
+const { UserAPI } = require("../../src/user");
 test.describe.configure({ mode: "serial" });
 
 const EMAIL_DOMAIN = "automation.com";

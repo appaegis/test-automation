@@ -1,7 +1,7 @@
 const { test } = require("@playwright/test");
 const { HTTPS } = require("./https");
 const { gql } = require("graphql-request");
-const { sshRuleSchema } = require("../../../../core_lib/src/schema");
+const { sshRuleSchema } = require("../../../libs/src/schema");
 const { TeamAPI } = require("./team");
 
 exports.SSHRuleAPI = class SSHRule extends HTTPS {

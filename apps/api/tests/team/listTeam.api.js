@@ -1,5 +1,5 @@
 const { test, expect } = require("@playwright/test");
-const { TeamAPI } = require('../../src/library/apiRequest/team')
+const { TeamAPI } = require('../../src/team')
 const teamAPI = new TeamAPI()
 test.beforeAll(async()=>{
   await teamAPI.init(process.env.GRAPHQL_API)

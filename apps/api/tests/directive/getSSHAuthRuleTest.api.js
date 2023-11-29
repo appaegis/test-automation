@@ -1,6 +1,6 @@
 const { test, expect } = require("@playwright/test");
-const { SSHRuleAPI } = require("../../src/library/apiRequest/sshRule");
-const { UserAPI } = require("../../src/library/apiRequest/user");
+const { SSHRuleAPI } = require("../../src/sshRule");
+const { UserAPI } = require("../../src/user");
 test.describe.configure({ mode: "serial" });
 
 const userAPI = new UserAPI();

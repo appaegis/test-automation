@@ -1,5 +1,5 @@
 const { test, expect } = require("@playwright/test");
-const { UserAPI } = require("../../../src/library/apiRequest/user");
+const { UserAPI } = require("../../src/user");
 
 test.describe.configure({ mode: "serial" });
 let user = new UserAPI();

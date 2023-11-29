@@ -1,5 +1,5 @@
 const { test, expect } = require("@playwright/test");
-const { PolicyAPI } = require("../../src/library/apiRequest/policy");
+const { PolicyAPI } = require("../../src/policy");
 const { PolicyPrepFixtures } = require("../../src/fixtures/policyPrepFixtures");
 const POLICY_NAME = "automation_policy_api_test";
 

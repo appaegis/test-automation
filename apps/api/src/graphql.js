@@ -1,5 +1,5 @@
 const { GraphQLClient: GraphQLRequest } = require("graphql-request");
-const getIdTokenAndTenantUsingUserPassword = require("../../../../core_lib/src/authorize");
+const getIdTokenAndTenantUsingUserPassword = require("../../../libs/src/authorize");
 
 exports.GraphQLClient = class GraphQLClient {
   client = null;

@@ -1,5 +1,5 @@
 const base = require("@playwright/test");
-const { GraphQLClient } = require("../library/apiRequest/graphql");
+const { GraphQLClient } = require("../graphql");
 
 exports.test = base.test.extend({
   graphQLSync: async ({}, use) => {

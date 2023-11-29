@@ -1,7 +1,7 @@
 const { test } = require("@playwright/test");
 const { HTTPS } = require("./https");
 const { gql } = require("graphql-request");
-const { logForwardingEntrySchema } = require("../../../../core_lib/src/schema");
+const { logForwardingEntrySchema } = require("../../../libs/src/schema");
 
 exports.LogForwardingAPI = class LogForwarding extends HTTPS {
   async getLogForwardingEntries() {

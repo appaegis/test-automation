@@ -1,4 +1,4 @@
-const { test, expect } = require("../../../src/fixtures/apiSetup");
+const { test, expect } = require("../../src/fixtures/apiSetup");
 const { gql } = require("graphql-request");
 test.describe.configure({ mode: "serial" });
 

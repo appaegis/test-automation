@@ -1,7 +1,7 @@
-const { test, expect } = require("../../../src/fixtures/apiSetup");
+const { test, expect } = require("../../src/fixtures/apiSetup");
 const { gql } = require("graphql-request");
 test.describe.configure({ mode: "serial" });
-const { GraphQLClient } = require("../../../src/library/apiRequest/graphql");
+const { GraphQLClient } = require("../../src/graphql");
 
 test.describe("ListMarketplaceCustomerByTenantId API testing @C5604", () => {
   test("ListMarketplaceCustomerByTenantId - user register from aws marketplaceCustomerTenantId", async () => {

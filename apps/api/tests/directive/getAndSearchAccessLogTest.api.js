@@ -1,6 +1,6 @@
 const { test, expect } = require("@playwright/test");
-const { SSHRuleAPI } = require("../../src/library/apiRequest/sshRule");
-const { LogAPI } = require("../../src/library/apiRequest/log");
+const { SSHRuleAPI } = require("../../src/sshRule");
+const { LogAPI } = require("../../src/log");
 
 const logAPI = new LogAPI();
 

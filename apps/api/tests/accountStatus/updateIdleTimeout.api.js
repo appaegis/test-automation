@@ -1,6 +1,6 @@
 const {
   TimeoutSetting,
-} = require("../../../src/library/apiRequest/accountProfile");
+} = require("../../src/accountProfile");
 const { test, expect } = require("@playwright/test");
 
 const timeoutSetting = new TimeoutSetting();

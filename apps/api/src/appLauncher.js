@@ -1,7 +1,7 @@
 const { test } = require("@playwright/test");
 const { HTTPS } = require("./https");
 const { gql } = require("graphql-request");
-const { deleteLauncherSchema, listLaunchableAppsSchema } = require("../../../../core_lib/src/schema");
+const { deleteLauncherSchema, listLaunchableAppsSchema } = require("../../../libs/src/schema");
 
 exports.AppHandlerAPI = class AppHandler extends HTTPS {
   async deleteApp(appProtocol, appName) {

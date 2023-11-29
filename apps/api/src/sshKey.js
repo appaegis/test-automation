@@ -4,7 +4,7 @@ const { gql } = require("graphql-request");
 const {
   sshKeySchema,
   generateSshKeySchema,
-} = require("../../../../core_lib/src/schema");
+} = require("../../../libs/src/schema");
 
 exports.SSHKeyAPI = class SSHKey extends HTTPS {
   async generateKeyPair(algorithm = "rsa-2048") {
