@@ -19,7 +19,7 @@ const EXPECT_DEFAULT_TIMEOUT = 5000;
  */
 module.exports = defineConfig({
   testDir: './tests',
-  globalSetup: require.resolve("./src/fixtures/globalSteup.js"),
+  globalSetup: require.resolve("./src/fixtures/globalSetup.js"),
   timeout: TEST_DEFAULT_TIMEOUT,
   expect: {
     /**
