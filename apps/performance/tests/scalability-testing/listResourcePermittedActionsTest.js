@@ -31,9 +31,9 @@ export const options = {
     // },
     constant_arrival_rate: {
       executor: "constant-arrival-rate",
-      rate: 50000,
+      rate: 1000,
       timeUnit: '167s',
-      preAllocatedVUs: 1000,
+      preAllocatedVUs: 50000,
       duration: '120s'
     },
   }
@@ -78,8 +78,8 @@ export function handleSummary(data) {
       "Content-Type": "application/json",
     },
   };
-  //  const resp = http.post('http://es.mammothcyber.io/load_testing_getuserentryr-' + getCurrentDate() + '/_doc/', JSON.stringify(data), params);
-  //  console.log(resp.status_text + " " + resp.body);
+   const resp = http.post('http://es.mammothcyber.io/load_testing_listresourcepermittedactions-' + getCurrentDate() + '/_doc/', JSON.stringify(data), params);
+   console.log(resp.status_text + " " + resp.body);
 
   // Generate a test report in JSON file format 
   return {

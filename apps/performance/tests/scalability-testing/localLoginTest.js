@@ -1,16 +1,17 @@
 import { check, sleep } from "k6";
 import http from "k6/http";
 import { textSummary } from 'https://jslib.k6.io/k6-summary/0.0.2/index.js';
-// const {
-//  getAuthAndTenantID,
-//  getCurrentDate,
-//  elasticSearchHost,
-// } = require("../../../../libs/src/utils");
 
-// export function setup() {
-//  const authAndTenantID = getAuthAndTenantID();
-//  return authAndTenantID;
-// }
+const {
+ getAuthAndTenantID,
+ getCurrentDate,
+ elasticSearchHost,
+} = require("../../../../libs/src/utils.js");
+
+export function setup() {
+ const authAndTenantID = getAuthAndTenantID();
+ return authAndTenantID;
+}
 
 // define configuration
 export const options = {
@@ -49,7 +50,7 @@ export default function (authAndTenantID) {
     "Pre-check response code was 200": (resPreCheck) => resPreCheck.status == 200,
   });
   if(resPreCheck.status != 200) {
-    console.log("*** Pre-check ***   Status: " + resPreCheck.status + " Body: " + resPreCheck.body);
+    console.log("*** Pre-check ***  " + resPreCheck.status + " " + resPreCheck.body);
   };
   
   // -----------------------------Cognito----------------------------------------
@@ -83,10 +84,8 @@ export function handleSummary(data) {
     },
   };
   // Send the results to some remote server or trigger a hook
-//   const resp = http.post('http://es.mammothcyber.io/load_testing_locallogin/_doc/', JSON.stringify(data), params);
-//   if (resp.status != 200) {
-//     console.error('Error, got status ' + resp.status + " Body: " + resp.body);
-//   }
+  const resp = http.post('http://es.mammothcyber.io/load_testing_locallogin/_doc/', JSON.stringify(data), params);
+  console.log(resp.status_text + " " + resp.body);
 
   return {
     stdout : textSummary(data, {indent: '**', enableColors: true}),
