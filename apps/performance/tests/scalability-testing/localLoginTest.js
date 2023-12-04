@@ -6,7 +6,7 @@ const {
  getAuthAndTenantID,
  getCurrentDate,
  elasticSearchHost,
-} = require("../../../../libs/src/utils.js");
+} = require("../../src/utils.js");
 
 export function setup() {
  const authAndTenantID = getAuthAndTenantID();
