@@ -5,7 +5,7 @@ module.exports = {
     if (__ENV.Auth == undefined) {
       const result = exec.command(
         "dotenv",
-        ["-e", "../config/.env.qa", "node", "../src/authorize.js"],
+        ["-e", "../../config/.env.qa", "node", "../../src/authorize.js"],
         { env: { ADMIN_PASSWORD: __ENV.ADMIN_PASSWORD } }
       );
       const obj = JSON.parse(result);
