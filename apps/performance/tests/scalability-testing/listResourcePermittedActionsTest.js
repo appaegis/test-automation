@@ -31,10 +31,10 @@ export const options = {
     // },
     constant_arrival_rate: {
       executor: "constant-arrival-rate",
-      rate: 1000,
-      timeUnit: '167s',
-      preAllocatedVUs: 50000,
-      duration: '120s'
+      rate: 15000,
+      timeUnit: '100s',
+      preAllocatedVUs: 1000,
+      duration: '180s'
     },
   }
 };
