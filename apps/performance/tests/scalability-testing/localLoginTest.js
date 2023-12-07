@@ -24,7 +24,7 @@ export const options = {
   scenarios: {
     shared_iter_scenario: {
       executor: "shared-iterations",
-      vus: 1000,
+      vus: 1100,
       iterations: 20000,
       startTime: "1s"
     },
@@ -32,11 +32,10 @@ export const options = {
 };
 
 export default function (authAndTenantID) {
-  // console.log("auth: " + authAndTenantID);
   // ------------------------------Pre-check-----------------------------------
   const urlPreCheck = "https://qa-api.mammothcyber.io/rest/v1/public/signInPreCheck";
   const payloadPreCheck = JSON.stringify({
-    "email": "heybruce+001@gmail.com"
+    "email": __ENV.ADMIN_USERNAME
   });
   const params = {
     headers: {
@@ -54,24 +53,25 @@ export default function (authAndTenantID) {
   };
   
   // -----------------------------Cognito----------------------------------------
-//   const urlCognito = "https://cognito-idp.us-east-1.amazonaws.com/";
-//   const idToken = authAndTenantID.idToken;
-//   const payloadCognito = JSON.stringify({
-//     "AuthFlow": "USER_SRP_AUTH",
-//     "ClientId": "6mnhfltvibt1d7q5i6k1bff3da",
-//     "AuthParameters": {
-//       "USERNAME": "heybruce+001@gmail.com",
-//       "SRP_A": idToken
-//     },
-//     "ClientMetadata": {}
-//   });
-//   const resCognito = http.post(urlCognito, payloadCognito, params);
-//   check(resCognito, {
-//     "Cognito IDP response code was 200": (resCognito) => resCognito.status == 200,
-//   });
-//   if(resPreCheck.status != 200) {
-//     console.log("*** Cognito IDP ***   Status: " + resPreCheck.status + " Body: " + resPreCheck.body);
-//   };
+  // const urlCognito = __ENV.COGNITO_IDP;
+  const urlCognito = "https://cognito-idp.us-east-1.amazonaws.com/";
+  const idToken = authAndTenantID.idToken;
+  const payloadCognito = JSON.stringify({
+    "AuthFlow": "USER_SRP_AUTH",
+    "ClientId": __ENV.COGNITO_CLIENT_ID,
+    "AuthParameters": {
+      "USERNAME": __ENV.ADMIN_USERNAME,
+      "SRP_A": idToken
+    },
+    "ClientMetadata": {}
+  });
+  const resCognito = http.post(urlCognito, payloadCognito, params);
+  check(resCognito, {
+    "Cognito IDP response code was 200": (resCognito) => resCognito.status == 200,
+  });
+  if(resPreCheck.status != 200) {
+    console.log("*** Cognito IDP ***   Status: " + resPreCheck.status + " Body: " + resPreCheck.body);
+  };
   sleep(1);
 }
 
